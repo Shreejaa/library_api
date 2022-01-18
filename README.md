@@ -1,29 +1,5 @@
-# README #
+## Library API
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Library is a combination of [User Service](https://github.com/Shreejaa/user_api) and [Book Service](https://github.com/Shreejaa/book_api) along with its own set of APIs.
 
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+![Arch](https://github.com/Shreejaa/library_api/blob/master/MicroArch.jpg)
