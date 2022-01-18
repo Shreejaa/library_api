@@ -1,0 +1,22 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="shreejaa">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <or>
+                    <tableExists tableName="library" schemaName="librarydb"/>
+                    <tableExists tableName="user" schemaName="usersdb"/>
+                    <tableExists tableName="book" schemaName="booksdb"/>
+                </or>
+            </not>
+        </preConditions>
+        <addForeignKeyConstraint baseTableName="library" baseColumnNames="userid" constraintName="userid_fk" referencedTableName="user"
+                                 referencedColumnNames="id"  referencedTableSchemaName="usersdb"/>
+        <addForeignKeyConstraint baseTableName="library" baseColumnNames="bookid" constraintName="bookid_fk" referencedTableName="book"
+                                 referencedColumnNames="id" referencedTableSchemaName="booksdb"/>
+    </changeSet>
+</databaseChangeLog>

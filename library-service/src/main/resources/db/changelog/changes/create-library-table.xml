@@ -1,0 +1,31 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="shreejaa">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <or>
+                    <tableExists tableName="library" schemaName="librarydb"/>
+                    <tableExists tableName="library" schemaName="public"/>
+                </or>
+            </not>
+        </preConditions>
+        <createTable tableName="library">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="userid" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="bookid" type="int">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="library"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
